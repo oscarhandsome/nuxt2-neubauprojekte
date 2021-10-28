@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="relative z-10">
     <div v-if="projects.length === 0" class="contaner py-10">
       <div class="flex justify-center items-center">
         <Spinner />
