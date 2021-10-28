@@ -1,0 +1,109 @@
+<template>
+  <div
+    v-swiper="swiperOption"
+    class="w-full md:w-5/6 md:ml-auto relative"
+    :loadtheme="false"
+  >
+    <div class="swiper-wrapper">
+      <!-- <div v-for="(item, id) in teammatesData" :key="id" class="swiper-slide"> -->
+      <!-- Render original HTML in server, render Swiper in browser (client) -->
+      <!-- <img class="h-64 w-64" :src="`@/assets/images/products/${banner}`" /> -->
+      <!-- </div> -->
+      <slot></slot>
+    </div>
+    <!-- <div slot="button-prev" class="swiper-button-prev"></div>
+    <div slot="button-next" class="swiper-button-next"></div> -->
+    <div slot="pagination" class="swiper-pagination"></div>
+  </div>
+</template>
+
+<script lang="ts">
+import Vue from "vue";
+import { directive } from "vue-awesome-swiper";
+// import Teammate from "@/components/common/Teammate.vue";
+
+export default Vue.extend({
+  name: "Slider",
+  directives: {
+    swiper: directive,
+  },
+  components: {},
+  data() {
+    return {
+      banners: ["pills-1.png", "pills-2.png", "pills-3.png"],
+      swiperOption: {
+        slidesPerView: 3,
+        spaceBetween: -10,
+        slidesPerGroup: 3,
+        loop: false,
+        loopFillGroupWithBlank: true,
+        // navigation: {
+        //   nextEl: ".swiper-button-next",
+        //   prevEl: ".swiper-button-prev",
+        // },
+        breakpoints: {
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 24,
+            pagination: false,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 24,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 24,
+          },
+          320: {
+            slidesPerView: 1.5,
+            spaceBetween: 24,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+          },
+        },
+      },
+      // teammatesData: [
+      //   {
+      //     img: "user-1.png",
+      //     label: "PharmD",
+      //     name: "Dr. Phillip Ryan Whitman",
+      //     position: "Clinical Pharmacist",
+      //     license: "Licence: PS56867",
+      //   },
+      //   {
+      //     img: "user-2.png",
+      //     label: "ARPN",
+      //     name: "Laurie Lowe Nelson",
+      //     position: "Family Nurse Practitioner",
+      //     license: "NPI number: 1467595330",
+      //   },
+      //   {
+      //     img: "user-3.png",
+      //     label: "MD",
+      //     name: "Dr. Keri McFarlane Bentley",
+      //     position: "Family Physician",
+      //     license: "NPI number: 1588688998",
+      //   },
+      // ],
+    };
+  },
+  computed: {
+    // teammates(): Array<Object> {
+    //   return this.teammatesData;
+    // },
+  },
+});
+</script>
+
+<style lang="postcss" scoped>
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  @apply bg-monochromatic-blue;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+  @apply w-48 h-48;
+}
+</style>

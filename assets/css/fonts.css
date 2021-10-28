@@ -1,0 +1,103 @@
+/* @font-face {
+  font-family: "Sora";
+  src: url("../fonts/Sora Thin.eot");
+  src: url("../fonts/Sora Thin.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Sora Thin.woff2") format("woff2"),
+    url("../fonts/Sora Thin.woff") format("woff"),
+    url("../fonts/Sora Thin.svg#Sora Thin") format("svg");
+  font-weight: 100;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2044;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("../fonts/Sora ExtraLight.eot");
+  src: url("../fonts/Sora ExtraLight.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Sora ExtraLight.woff2") format("woff2"),
+    url("../fonts/Sora ExtraLight.woff") format("woff"),
+    url("../fonts/Sora ExtraLight.svg#Sora ExtraLight") format("svg");
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2044;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("../fonts/Sora Light.eot");
+  src: url("../fonts/Sora Light.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Sora Light.woff2") format("woff2"),
+    url("../fonts/Sora Light.woff") format("woff"),
+    url("../fonts/Sora Light.svg#Sora Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2044;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("../fonts/Sora Medium.eot");
+  src: url("../fonts/Sora Medium.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Sora Medium.woff2") format("woff2"),
+    url("../fonts/Sora Medium.woff") format("woff"),
+    url("../fonts/Sora Medium.svg#Sora Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2044;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("../fonts/Sora SemiBold.eot");
+  src: url("../fonts/Sora SemiBold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Sora SemiBold.woff2") format("woff2"),
+    url("../fonts/Sora SemiBold.woff") format("woff"),
+    url("../fonts/Sora SemiBold.svg#Sora SemiBold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2044;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("../fonts/Sora Bold.eot");
+  src: url("../fonts/Sora Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Sora Bold.woff2") format("woff2"),
+    url("../fonts/Sora Bold.woff") format("woff"),
+    url("../fonts/Sora Bold.svg#Sora Bold") format("svg");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2044;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("../fonts/Sora ExtraBold.eot");
+  src: url("../fonts/Sora ExtraBold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Sora ExtraBold.woff2") format("woff2"),
+    url("../fonts/Sora ExtraBold.woff") format("woff"),
+    url("../fonts/Sora ExtraBold.svg#Sora ExtraBold") format("svg");
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2044;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("../fonts/Sora Regular.eot");
+  src: url("../fonts/Sora Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Sora Regular.woff2") format("woff2"),
+    url("../fonts/Sora Regular.woff") format("woff"),
+    url("../fonts/Sora Regular.svg#Sora Regular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2044;
+} */
