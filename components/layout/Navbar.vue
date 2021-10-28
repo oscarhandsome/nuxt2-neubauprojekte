@@ -81,9 +81,10 @@
                       text-sm
                       uppercase
                       border-b-4 border-transparent
-                      py-3
+                      py-5
                       focus:border-green-light
                       hover:border-green-light
+                      transition-all
                     "
                     :class="{
                       'text-blue-500 bg-transparent focus:outline-none focus:text-green-light focus:bg-white hover:outline-none hover:text-green-light hover:bg-white':
@@ -116,7 +117,7 @@
                 <!-- Profile dropdown -->
                 <div class="relative">
                   <div>
-                    <a
+                    <button
                       class="
                         flex
                         items-center
@@ -127,12 +128,15 @@
                         bg-gray-100
                         px-4
                         py-2
+                        hover:bg-green-light hover:text-white
+                        focus:bg-green-light focus:text-white
+                        transition-all
                       "
                       :class="{
                         'text-black': !darkMode,
                         'text-white': darkMode,
                       }"
-                      href="/login-choose"
+                      @click="loginFormVisibility = !loginFormVisibility"
                     >
                       <!-- <svg
                         class="md:mr-3"
@@ -160,7 +164,140 @@
                         heigth="5"
                         alt="login"
                       />
-                    </a>
+                    </button>
+                  </div>
+
+                  <div
+                    v-if="loginFormVisibility"
+                    id="login"
+                    class="
+                      flex flex-col
+                      loginform
+                      absolute
+                      right-0
+                      top-full
+                      bg-white
+                      z-20
+                    "
+                    role="login"
+                  >
+                    <div class="login-header bg-green-light text-white p-5">
+                      <i class="fa fa-times close-login-box"></i>
+                      <!-- <a href="https://www.neubauprojekte.ch/registrierung/">Noch kein Konto?</a> -->
+                      <h5>Login</h5>
+                    </div>
+
+                    <div
+                      id="loginform"
+                      class="p-5"
+                      name="loginform"
+                      action="https://www.neubauprojekte.ch/logging/"
+                      method="post"
+                    >
+                      <p class="form-elements">
+                        <label
+                          class="form-element label font-semibold"
+                          for="user"
+                          >Benutzername oder E-Mail-Adresse</label
+                        >
+                        <input
+                          id="user"
+                          type="text"
+                          name="log"
+                          class="
+                            form-element
+                            text
+                            h-10
+                            border border-gray-300
+                            rounded-sm
+                            w-full
+                          "
+                          value=""
+                          size="20"
+                        />
+                      </p>
+                      <p class="form-elements">
+                        <label
+                          class="form-element label font-semibold"
+                          for="pass"
+                          >Passwort</label
+                        >
+                        <input
+                          id="pass"
+                          type="password"
+                          name="pwd"
+                          class="
+                            form-element
+                            text
+                            h-10
+                            border border-gray-300
+                            rounded-sm
+                            w-full
+                          "
+                          value=""
+                          size="20"
+                        />
+                      </p>
+
+                      <p class="form-elements active">
+                        <a
+                          href="https://www.neubauprojekte.ch/mein-konto/lost-password/"
+                          class="forgot-password text-green-light mb-4"
+                          >Passwort vergessen?</a
+                        >
+                      </p>
+                      <p class="form-elements remember-me active mb-4">
+                        <label class="form-element label"
+                          ><input
+                            id="remember_me"
+                            name="rememberme"
+                            type="checkbox"
+                            value="forever"
+                          />
+                          Angemeldet bleiben</label
+                        >
+                      </p>
+                      <p class="form-elements submit active text-center">
+                        <button
+                          id="wp-submit"
+                          type="submit"
+                          name="wp-submit"
+                          class="
+                            button button-primary
+                            w-full
+                            py-2
+                            font-semibold
+                            text-base text-center text-white
+                            uppercase
+                            bg-green-light
+                            hover:opacity-80
+                            focus:opacity-80
+                            transition-all
+                            rounded-full
+                          "
+                        >
+                          Anmelden
+                        </button>
+                        <input
+                          type="hidden"
+                          name="redirect_to"
+                          value="https://www.neubauprojekte.ch/"
+                        />
+                      </p>
+                    </div>
+                    <div class="register-now-box p-5 flex flex-col">
+                      <h5>Jetzt registrieren</h5>
+                      <a
+                        class="text-green-light"
+                        href="https://www.neubauprojekte.ch/logging/?action=register"
+                        >Für die Immobiliensuche</a
+                      >
+                      <a
+                        class="text-green-light"
+                        href="https://cockpit.neubauprojekte.ch/"
+                        >Als Immobilien-Anbieter</a
+                      >
+                    </div>
                   </div>
                 </div>
               </div>
@@ -275,6 +412,7 @@ export default Vue.extend({
     return {
       navigation,
       isOpen: false,
+      loginFormVisibility: false,
     }
   },
   computed: {
@@ -284,3 +422,9 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style scoped>
+.loginform {
+  width: 288px;
+}
+</style>

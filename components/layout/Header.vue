@@ -24,6 +24,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { Projects } from 'types'
 
 import Card from '@/components/common/Card.vue'
 import Spinner from '@/components/common/Spinner.vue'

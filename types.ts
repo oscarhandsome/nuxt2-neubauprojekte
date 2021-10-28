@@ -19,6 +19,11 @@ interface Project {
   zip: string
 }
 
+interface Projects {
+  projects: Array<Project>
+  totalCount: Number
+}
+
 interface Stats {
   countExclusive: number
   countNonExclusive: number
@@ -114,6 +119,7 @@ interface SeoHead {
 export {
   Product,
   Project,
+  Projects,
   Stats,
   Badge,
   Pill,
