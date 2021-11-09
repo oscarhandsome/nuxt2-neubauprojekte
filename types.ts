@@ -8,20 +8,35 @@ export interface NavLinkParam {
 }
 
 interface Project {
-  image: string
-  realtorId: string
-  realtorImage: string
-  realtorTitle: string
-  realtorUrl: string
-  title: string
-  uid: string
-  url: string
-  zip: string
+  image?: string | null
+  realtorId?: string | number
+  realtorImage?: string
+  realtorTitle?: string
+  realtorUrl?: string
+  title?: string
+  uid?: string | number
+  url?: string
+  zip?: string | number
 }
 
 interface Projects {
   projects: Array<Project>
-  totalCount: Number
+  totalCount?: number
+}
+
+interface Coords {
+  accuracy?: number
+  altitude?: null | number | string
+  altitudeAccuracy?: null | number | string
+  heading?: null | number | string
+  latitude: number
+  longitude: number
+  speed?: null | number | string
+}
+
+interface Position {
+  coords: Coords
+  timestamp?: number
 }
 
 interface Stats {
@@ -120,6 +135,8 @@ export {
   Product,
   Project,
   Projects,
+  Coords,
+  Position,
   Stats,
   Badge,
   Pill,

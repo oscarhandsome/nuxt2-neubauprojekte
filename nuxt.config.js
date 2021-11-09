@@ -1,4 +1,7 @@
 export default {
+  // https://nuxtjs.org/docs/get-started/commands/
+  target: 'server',
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt2-neubauprojekte',

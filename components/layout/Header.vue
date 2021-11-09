@@ -22,9 +22,9 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
-import { Projects } from 'types'
+// import { Projects, Project } from 'types'
 
 import Card from '@/components/common/Card.vue'
 import Spinner from '@/components/common/Spinner.vue'
@@ -87,10 +87,7 @@ export default Vue.extend({
 
       this.projects = response.projects
     } catch (err) {
-      console.error(`${err} 💥`)
-
-      // Reject promise returned from async function
-      throw err
+      // console.error(`${err} 💥`)
     }
   },
 })
