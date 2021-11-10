@@ -97,7 +97,4 @@ export default Vue.extend({
 .h-496 {
   height: 49.6rem;
 }
-
-.test {
-}
 </style>
