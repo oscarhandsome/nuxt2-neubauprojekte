@@ -1,6 +1,6 @@
 export default {
   // https://nuxtjs.org/docs/get-started/commands/
-  target: 'static',
+  target: 'server',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -15,6 +15,12 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+
+  googleFonts: {
+    families: {
+      'Open Sans': true,
+    },
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -58,4 +64,11 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  // Decrease memory usage: https://webpack.js.org/configuration/watch/#watchoptionsignored
+  watchers: {
+    webpack: {
+      ignored: /node_modules/,
+    },
+  },
 }
