@@ -1,7 +1,7 @@
 <template>
   <div class="sticky top-0 z-20 bg-white w-full">
     <div class="container mx-auto">
-      <div class="flex items-center justify-between text-base">
+      <div class="flex items-center justify-between">
         <nav class="w-full">
           <div>
             <div class="flex items-center justify-between h-16">

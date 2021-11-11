@@ -1,4 +1,4 @@
-import { SeoHead } from "types";
+import { SeoHead } from 'types'
 
 /*
  * Titles and descriptions for common pages without Product pages
@@ -7,37 +7,36 @@ import { SeoHead } from "types";
 // @TODO Rewrite to common object or class
 
 const homePage: SeoHead = {
-  title: "Rocket Rx - US Online Doctor",
+  title: 'Title',
   meta: [
     {
-      hid: "description",
-      name: "description",
-      content:
-        "Rocket Rx is a US Online Doctor offering express treatment online for a range of health conditions. Safe, Convenient, Fast and Affordable.",
+      hid: 'description',
+      name: 'description',
+      content: 'description',
     },
   ],
-};
+}
 
 const howItWorksPage: SeoHead = {
-  title: "How It Works - Rocket Rx",
+  title: 'title',
   meta: [
     {
-      hid: "description",
-      name: "description",
-      content: "How our online consultation process works.",
+      hid: 'description',
+      name: 'description',
+      content: 'description',
     },
   ],
-};
+}
 
 const faqPage: SeoHead = {
-  title: "Frequently Asked Questions - Rocket Rx",
+  title: 'title',
   meta: [
     {
-      hid: "description",
-      name: "description",
-      content: "Frequently Asked Questions about Rocket Rx.",
+      hid: 'description',
+      name: 'description',
+      content: 'description',
     },
   ],
-};
+}
 
-export { homePage, howItWorksPage, faqPage };
+export { homePage, howItWorksPage, faqPage }

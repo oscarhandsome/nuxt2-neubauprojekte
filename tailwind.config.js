@@ -2,6 +2,7 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   // mode: 'jit',
+  // purge: ['./**/*.{js,jsx,ts,tsx,vue}'],
   purge: {
     content: [
       `components/**/*.{vue,js}`,
@@ -26,6 +27,88 @@ module.exports = {
   // },
 
   theme: {
+    boxShadow: {
+      button: '0 4px 4px 0 rgba(0, 0, 0, 0.25)',
+      bottom: 'inset 0 -2px -4px 0 rgba(0, 0, 0, 0.06)',
+    },
+    // screens: {
+    //   sm: '375px',
+    //   smd: '768px',
+    //   md: '1024px',
+    //   lg: '1152px',
+    //   xl: '1440px',
+    // },
+
+    // colors: {
+    //   transparent: 'transparent',
+    //   current: 'currentColor',
+    //   green: '#C1ED7F',
+    //   white: '#FFFFFF',
+    //   orange: '#E6AB0B',
+    //   primary: '#C1ED7F',
+    //   secondary: '#FFED4A',
+    //   regular: '#1DA1C2',
+    //   danger: '#E3342F',
+    //   blue: '#BFDEE0',
+    //   'gray-lightest': '#ECECEC',
+    //   black: '#111827',
+    //   'black-gray': '#444444',
+    //   'gray-300': '#D1D5DB',
+    //   'gray-link': '#7B7979',
+    //   'gray-popup': '#B3B3B3',
+    //   'gray-search': '#DCDCDC',
+    //   'gray-light': '#EDEDED',
+    //   'gray-lighter': '#D1D1D1',
+    //   'green-filter': '#a7c27f',
+    //   'green-darker': '#79C20A',
+    //   'green-darker-5': '#6CB500', // green-darker 5% darken
+    //   'green-darker-30': '#2D7600', // green-darker 30% darken
+    //   'gray-700': '#374151',
+    //   'gray-400': '#6B7280'
+    // },
+
+    // backgroundColor: (theme: any) => ({
+    //   ...theme('colors'),
+    //   transparent: 'transparent',
+    //   current: 'currentColor',
+    //   green: '#C1ED7F',
+    //   'custom-green': '#C1ED7F',
+    //   'green-darker': '#79C20A',
+    //   'green-darkest': '#4D7E02',
+    //   'green-darker-5': '#6CB500', // green-darker 5% darken
+    //   'green-darker-30': '#2D7600', // green-darker 30% darken
+    //   gray: '#F2F2F2',
+    //   'gray-banner': '#F4F5F7',
+    //   'gray-exclusive-disabled': '#7B7979',
+    //   'green-banner': '#A7C27F',
+    //   'gray-light': '#EDEDED',
+    //   'gray-lighter': '#ECECEC',
+    //   'green-lightest': '#DDFBB2',
+    //   'green-form-submit': '#A7C27F',
+    //   'gray-50': '#F9FAFB',
+    //   'gray-300': '#D1D5DB',
+    //   'gray-600': '#4B5563',
+    //   'gray-700': '#374151',
+    //   'gray-900': '#111827',
+    //   primary: '#C1ED7F',
+    //   secondary: '#FFED4A',
+    //   regular: '#1DA1C2',
+    //   danger: '#E3342F',
+    //   white: '#FFFFFF',
+    //   orange: '#E6AB0B',
+    //   'orange-darker-5': '#D99E00',
+    //   blue: '#BFDEE0',
+    //   'black-gray': '#444444',
+    //   black: '#000000',
+    //   filter: '#F5F5F7',
+    //   'orange-overlay': '#EFD358',
+    //   'banner-card': '#F3F4F6'
+    // }),
+    // borderColor: (theme: any) => ({
+    //   ...theme('colors'),
+    //   search: '#D1D5DB'
+    // }
+
     extend: {
       // backgroundImage: {
       //   hero: `url('~assets/images/products/bottles-hero.png')`,
@@ -45,6 +128,19 @@ module.exports = {
       // },
       // maxWidth: {
       //   '1/2': '50%',
+      // },
+      // spacing: {},
+      // transitionProperty: {
+      //   height: 'height',
+      //   spacing: 'margin, padding',
+      //   'max-height': 'max-height',
+      //   rotate: 'rotate',
+      // },
+      // backgroundImage: {
+      //   brush: "url('static/Brush.svg')",
+      // },
+      // backgroundSize: {
+      //   'brush-big': '120% auto',
       // },
     },
 
@@ -199,7 +295,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      // backgroundColor: ['odd', 'even'],
+    },
   },
   plugins: [],
 }
