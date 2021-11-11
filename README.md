@@ -7,14 +7,14 @@
 $ npm install / yarn install
 
 # serve with hot reload at localhost:3000
-$ npm run dev / yard dev
+$ npm run dev / yarn dev
 
 # build for production and launch server
-$ npm run build / yard generate
-$ npm run start
+$ npm run build / yarn generate
+$ npm run start / yarn generate
 
 # generate static project
-$ npm run generate / yard generate
+$ npm run generate / yarn generate
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
