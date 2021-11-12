@@ -4,7 +4,7 @@
       <div class="flex items-center justify-between">
         <nav class="w-full">
           <div>
-            <div class="flex items-center justify-between h-16 shadow-bottom">
+            <div class="flex items-center justify-between shadow-bottom">
               <nuxt-link class="mr-auto" to="https://www.neubauprojekte.ch">
                 <img
                   :src="require('@/assets/images/logo.svg')"
@@ -73,7 +73,6 @@
                     <div
                       v-for="(item, idx) in navigation"
                       :key="idx"
-                      :href="item.href"
                       class="
                         nav-link
                         flex
@@ -82,9 +81,9 @@
                         font-light
                         text-base
                         border-b-4 border-transparent
-                        py-5
                         focus:border-green
                         hover:border-green
+                        py-5
                         transition-all
                       "
                       :class="{
@@ -97,7 +96,7 @@
                       :exact="item.current"
                       exact-active-class="active"
                     >
-                      {{ item.name }}
+                      <a :href="item.href">{{ item.name }}</a>
 
                       <img
                         v-if="item.childrens"
@@ -371,7 +370,7 @@ export default Vue.extend({
     return {
       navigation: initialNavigation(),
       isOpen: false,
-      loginFormVisibility: true,
+      loginFormVisibility: false,
     }
   },
   computed: {
