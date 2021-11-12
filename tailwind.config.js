@@ -219,11 +219,21 @@ module.exports = {
       black: colors.black,
       white: colors.white,
       // gray: colors.coolGray,
-      'gray-100': '#ECECEC',
-      'gray-300': '#D1D5DB',
-      'gray-700': '#374151',
+      gray: {
+        50: '#F9FAFB',
+        100: '#ECECEC',
+        300: '#D1D5DB',
+        600: '#4B5563',
+        700: '#374151',
+        900: '#111827',
+      },
       'black-gray': '#444444',
+      'gray-banner': '#F4F5F7',
       // indigo: colors.indigo,
+      indigo: {
+        500: '#6366F1',
+        600: '#4F46E5',
+      },
       // red: {
       //   100: '#FFDEDE',
       //   200: '#FFCDCE',
@@ -234,6 +244,9 @@ module.exports = {
       //   700: '#CC4849',
       //   800: '#993637',
       // },
+      rose: {
+        700: '#BE123C',
+      },
       // yellow: colors.amber,
       // green: colors.green,
       green: '#79C20A',
@@ -259,21 +272,21 @@ module.exports = {
       //   700: '#BAB59E',
       //   800: '#8C8876',
       // },
-      // primary: {
-      //   light: '#272A3F',
-      //   DEFAULT: '#272A3F',
-      //   dark: '#272A3F',
-      // },
-      // secondary: {
-      //   light: '#685879',
-      //   DEFAULT: '#685879',
-      //   dark: '#685879',
-      // },
-      // tertiary: {
-      //   light: '#252D9B',
-      //   DEFAULT: '#252D9B',
-      //   dark: '#252D9B',
-      // },
+      primary: {
+        // light: '#272A3F',
+        DEFAULT: '#79C20A',
+        // dark: '#272A3F',
+      },
+      secondary: {
+        // light: '#685879',
+        DEFAULT: '#E6AB0B',
+        // dark: '#685879',
+      },
+      tertiary: {
+        // light: '#252D9B',
+        DEFAULT: '#1DA1C2',
+        // dark: '#252D9B',
+      },
       // monochromatic: {
       //   grey: '#F7FAFD',
       //   blue: '#272A3F',

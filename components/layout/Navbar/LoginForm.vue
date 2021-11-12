@@ -108,6 +108,7 @@ export default Vue.extend({
   methods: {
     submitForm() {
       //   console.log(this.form)
+      this.$emit('logged-in-submitted')
     },
   },
 })

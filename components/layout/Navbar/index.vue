@@ -14,7 +14,7 @@
                 />
               </nuxt-link>
 
-              <div class="mr-auto flex md:hidden">
+              <div class="mr-auto flex md:hidden order-last">
                 <!-- Mobile menu button -->
                 <button
                   class="
@@ -27,19 +27,11 @@
                   "
                   @click="isOpen = !isOpen"
                 >
-                  <svg
+                  <img
                     :class="[isOpen ? 'hidden' : 'block', 'h-6 w-6']"
-                    stroke="currentColor"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    ></path>
-                  </svg>
+                    src="Menu.svg"
+                    alt=""
+                  />
                   <svg
                     :class="[isOpen ? 'block' : 'hidden', 'h-6 w-6']"
                     stroke="currentColor"
@@ -163,9 +155,7 @@
                           ml-auto
                           mr-2
                           rounded-full
-                          bg-gray-100
-                          px-4
-                          py-2
+                          sm:px-4 sm:py-2
                           hover:bg-green hover:text-white
                           focus:bg-green focus:text-white
                           transition-all
@@ -195,8 +185,7 @@
                           mr-0
                           rounded-full
                           bg-green-light
-                          px-4
-                          py-2
+                          sm:px-4 sm:py-2
                           hover:bg-green hover:text-white
                           focus:bg-green focus:text-white
                           transition-all
@@ -223,7 +212,6 @@
                       id="login"
                       class="
                         flex flex-col
-                        login-form
                         absolute
                         right-0
                         top-full
@@ -233,37 +221,42 @@
                         pt-4
                         pb-10
                       "
+                      :class="{ 'login-form': !loggedMenu }"
                       role="login"
                     >
-                      <div
-                        class="
-                          login-header
-                          flex
-                          justify-between
-                          items-center
-                          mb-9
-                        "
-                      >
-                        <h5 class="font-bold text-2xl">Anmelden</h5>
-                        <a
-                          href="https://www.neubauprojekte.ch/mein-konto/lost-password/"
-                          class="forgot-password text-green"
-                          >Passwort vergessen?</a
+                      <div v-if="!loggedMenu">
+                        <div
+                          class="
+                            login-header
+                            flex
+                            justify-between
+                            items-center
+                            mb-9
+                          "
                         >
+                          <h5 class="font-bold text-2xl">Anmelden</h5>
+                          <a
+                            href="https://www.neubauprojekte.ch/mein-konto/lost-password/"
+                            class="forgot-password text-green"
+                            >Passwort vergessen?</a
+                          >
+                        </div>
+
+                        <LoginForm @logged-in-submitted="loginConfirmed" />
+
+                        <hr class="text-gray-100 mb-5" />
+
+                        <div class="register-now-box flex flex-col">
+                          <h5 class="font-semibold text-base mb-2">
+                            Noch nicht registriert?
+                          </h5>
+                          <a class="text-green" href="#"
+                            >Kostenloss Suchprofile erstellen</a
+                          >
+                        </div>
                       </div>
 
-                      <LoginForm />
-
-                      <hr class="text-gray-100 mb-5" />
-
-                      <div class="register-now-box flex flex-col">
-                        <h5 class="font-semibold text-base mb-2">
-                          Noch nicht registriert?
-                        </h5>
-                        <a class="text-green" href="#"
-                          >Kostenloss Suchprofile erstellen</a
-                        >
-                      </div>
+                      <login-menu v-if="loggedMenu"></login-menu>
                     </div>
                   </div>
                 </div>
@@ -300,6 +293,7 @@
 import Vue from 'vue'
 // import Logo from '@/components/layout/Logo.vue'
 import LoginForm from '@/components/layout/Navbar/LoginForm.vue'
+import LoginMenu from '@/components/layout/Navbar/LoginMenu.vue'
 
 const initialNavigation = () => [
   {
@@ -358,7 +352,7 @@ const initialNavigation = () => [
 
 export default Vue.extend({
   // components: { Logo },
-  components: { LoginForm },
+  components: { LoginForm, LoginMenu },
   props: {
     mode: {
       type: String,
@@ -371,11 +365,17 @@ export default Vue.extend({
       navigation: initialNavigation(),
       isOpen: false,
       loginFormVisibility: false,
+      loggedMenu: false,
     }
   },
   computed: {
     darkMode() {
       return this.mode === 'dark'
+    },
+  },
+  methods: {
+    loginConfirmed() {
+      this.loggedMenu = true
     },
   },
 })
