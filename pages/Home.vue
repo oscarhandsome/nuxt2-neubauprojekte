@@ -9,7 +9,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { SeoHead } from 'types'
-import Navbar from '@/components/layout/Navbar.vue'
+import Navbar from '@/components/layout/Navbar/index.vue'
 import Header from '@/components/layout/Header.vue'
 import Advertisement from '@/components/common/Advertisement.vue'
 

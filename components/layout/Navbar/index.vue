@@ -8,8 +8,8 @@
               <nuxt-link class="mr-auto" to="https://www.neubauprojekte.ch">
                 <img
                   :src="require('@/assets/images/logo.svg')"
-                  width="240"
-                  height="70"
+                  width="285"
+                  height="50"
                   alt="neubauprojekte"
                 />
               </nuxt-link>
@@ -69,7 +69,7 @@
                   </nuxt-link>
                 </div>
                 <div class="hidden md:block">
-                  <div class="flex items-baseline">
+                  <div class="flex items-baseline relative">
                     <a
                       v-for="(item, idx) in navigation"
                       :key="idx"
@@ -78,17 +78,16 @@
                         flex
                         mr-2
                         xl:mr-6
-                        font-semibold
-                        text-sm
-                        uppercase
+                        font-light
+                        text-base
                         border-b-4 border-transparent
                         py-5
-                        focus:border-green-light
-                        hover:border-green-light
+                        focus:border-green
+                        hover:border-green
                         transition-all
                       "
                       :class="{
-                        'text-blue-500 bg-transparent focus:outline-none focus:text-green-light focus:bg-white hover:outline-none hover:text-green-light hover:bg-white':
+                        'text-blue-500 bg-transparent focus:outline-none focus:text-green focus:bg-white hover:outline-none hover:text-green hover:bg-white':
                           !darkMode,
                         'text-white bg-transparent focus:outline-none focus:text-blue-500 focus:bg-white hover:text-blue-500 hover:bg-white':
                           darkMode,
@@ -108,6 +107,50 @@
                         heigth="8"
                         alt="img_desc"
                       />
+
+                      <div
+                        v-if="item.childrens"
+                        class="
+                          absolute
+                          top-full
+                          dropdown
+                          bg-white
+                          p-5
+                          border-r-4
+                        "
+                      >
+                        <div class="flex flex-col items-baseline">
+                          <a
+                            v-for="(itemCh, chIdx) in item.childrens"
+                            :key="chIdx"
+                            :href="itemCh.href"
+                            class="
+                              flex
+                              mr-2
+                              xl:mr-6
+                              font-light
+                              text-base
+                              border-b-4 border-transparent
+                              py-5
+                              focus:border-green
+                              hover:border-green
+                              transition-all
+                              whitespace-nowrap
+                              w-full
+                            "
+                            :class="{
+                              'text-blue-500 bg-transparent focus:outline-none focus:text-green focus:bg-white hover:outline-none hover:text-green hover:bg-white':
+                                !darkMode,
+                              'text-white bg-transparent focus:outline-none focus:text-blue-500 focus:bg-white hover:text-blue-500 hover:bg-white':
+                                darkMode,
+                              'md:hidden': item.hiddenOnDesktop,
+                            }"
+                            :exact="itemCh.current"
+                            exact-active-class="active"
+                            >{{ itemCh.name }}
+                          </a>
+                        </div>
+                      </div>
                     </a>
                   </div>
                 </div>
@@ -117,7 +160,7 @@
                 <div class="flex items-center md:ml-6">
                   <!-- Profile dropdown -->
                   <div class="relative">
-                    <div>
+                    <div class="flex">
                       <button
                         class="
                           flex
@@ -129,8 +172,8 @@
                           bg-gray-100
                           px-4
                           py-2
-                          hover:bg-green-light hover:text-white
-                          focus:bg-green-light focus:text-white
+                          hover:bg-green hover:text-white
+                          focus:bg-green focus:text-white
                           transition-all
                         "
                         :class="{
@@ -139,30 +182,43 @@
                         }"
                         @click="loginFormVisibility = !loginFormVisibility"
                       >
-                        <!-- <svg
-                        class="md:mr-3"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M3.121 15.804C5.21942 14.6179 7.58958 13.9963 10 14C12.5 14 14.847 14.655 16.879 15.804M13 8C13 8.79565 12.6839 9.55871 12.1213 10.1213C11.5587 10.6839 10.7956 11 10 11C9.20435 11 8.44129 10.6839 7.87868 10.1213C7.31607 9.55871 7 8.79565 7 8C7 7.20435 7.31607 6.44129 7.87868 5.87868C8.44129 5.31607 9.20435 5 10 5C10.7956 5 11.5587 5.31607 12.1213 5.87868C12.6839 6.44129 13 7.20435 13 8ZM19 10C19 11.1819 18.7672 12.3522 18.3149 13.4442C17.8626 14.5361 17.1997 15.5282 16.364 16.364C15.5282 17.1997 14.5361 17.8626 13.4442 18.3149C12.3522 18.7672 11.1819 19 10 19C8.8181 19 7.64778 18.7672 6.55585 18.3149C5.46392 17.8626 4.47177 17.1997 3.63604 16.364C2.80031 15.5282 2.13738 14.5361 1.68508 13.4442C1.23279 12.3522 1 11.1819 1 10C1 7.61305 1.94821 5.32387 3.63604 3.63604C5.32387 1.94821 7.61305 1 10 1C12.3869 1 14.6761 1.94821 16.364 3.63604C18.0518 5.32387 19 7.61305 19 10Z"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                        <span class="hidden md:block mr-2">Merkliste</span>
+
+                        <img
+                          src="heart-nav.svg"
+                          width="22"
+                          heigth="22"
+                          alt="login"
                         />
-                      </svg> -->
+                      </button>
+
+                      <button
+                        class="
+                          flex
+                          items-center
+                          text-sm
+                          ml-auto
+                          mr-0
+                          rounded-full
+                          bg-green-light
+                          px-4
+                          py-2
+                          hover:bg-green hover:text-white
+                          focus:bg-green focus:text-white
+                          transition-all
+                        "
+                        :class="{
+                          'text-black': !darkMode,
+                          'text-white': darkMode,
+                        }"
+                        @click="loginFormVisibility = !loginFormVisibility"
+                      >
                         <span class="hidden md:block mr-2">Anmelden</span>
 
                         <img
-                          :src="
-                            require('@/assets/images/svg/arrow-down-medium-light.svg')
-                          "
-                          width="5"
-                          heigth="5"
+                          src="User.svg"
+                          width="22"
+                          heigth="22"
                           alt="login"
                         />
                       </button>
@@ -173,7 +229,7 @@
                       id="login"
                       class="
                         flex flex-col
-                        loginform
+                        login-form
                         absolute
                         right-0
                         top-full
@@ -182,10 +238,10 @@
                       "
                       role="login"
                     >
-                      <div class="login-header bg-green-light text-white p-5">
+                      <div class="login-header p-5">
                         <i class="fa fa-times close-login-box"></i>
                         <!-- <a href="https://www.neubauprojekte.ch/registrierung/">Noch kein Konto?</a> -->
-                        <h5>Login</h5>
+                        <h5 class="font-bold text-2xl">Anmelden</h5>
                       </div>
 
                       <div
@@ -243,7 +299,7 @@
                         <p class="form-elements active">
                           <a
                             href="https://www.neubauprojekte.ch/mein-konto/lost-password/"
-                            class="forgot-password text-green-light mb-4"
+                            class="forgot-password text-green mb-4"
                             >Passwort vergessen?</a
                           >
                         </p>
@@ -266,11 +322,11 @@
                             class="
                               button button-primary
                               w-full
-                              py-2
+                              p-4
                               font-semibold
                               text-base text-center text-white
                               uppercase
-                              bg-green-light
+                              bg-green
                               hover:opacity-80
                               focus:opacity-80
                               transition-all
@@ -289,12 +345,12 @@
                       <div class="register-now-box p-5 flex flex-col">
                         <h5>Jetzt registrieren</h5>
                         <a
-                          class="text-green-light"
+                          class="text-green"
                           href="https://www.neubauprojekte.ch/logging/?action=register"
                           >Für die Immobiliensuche</a
                         >
                         <a
-                          class="text-green-light"
+                          class="text-green"
                           href="https://cockpit.neubauprojekte.ch/"
                           >Als Immobilien-Anbieter</a
                         >
@@ -335,41 +391,35 @@
 import Vue from 'vue'
 // import Logo from '@/components/layout/Logo.vue'
 
-const navigation = [
+const initialNavigation = () => [
   {
-    name: 'Log in',
-    href: '/login-choose',
-    current: false,
-    hiddenOnDesktop: true,
-  },
-  {
-    name: 'Objekte',
+    name: 'Kaufen',
     href: 'https://www.neubauprojekte.ch/objektsuche/',
     current: true,
   },
   {
-    name: 'Anbieter',
+    name: 'Mieten',
     href: 'https://www.neubauprojekte.ch/anbieter-liste',
     current: false,
   },
   {
-    name: 'NeubauInfo',
+    name: 'Anbieter',
     href: 'https://www.neubauprojekte.ch/neubauinfo',
     current: false,
   },
   {
-    name: 'Bautrends',
+    name: 'Blog',
     href: 'https://www.neubauprojekte.ch/bautrends',
     current: false,
   },
   {
-    name: 'Marketing',
+    name: 'Premium-Abo',
     href: 'https://www.neubauprojekte.ch/immobilienmarketing',
     current: false,
   },
   {
-    name: 'Blog',
-    href: 'https://www.neubauprojekte.ch/blog',
+    name: 'Inserieren',
+    href: 'https://www.neubauprojekte.ch/inserieren',
     current: false,
   },
   {
@@ -378,23 +428,18 @@ const navigation = [
     current: false,
     childrens: [
       {
-        name: 'NeubauInfoService',
+        name: 'Testimonials & Referenzen',
         href: 'https://www.neubauprojekte.ch/information-neubauinfoservice',
         current: false,
       },
       {
-        name: 'FirstCaution',
+        name: 'First Caution',
         href: 'https://www.neubauprojekte.ch/firstcaution',
         current: false,
       },
       {
-        name: 'Newsletter Anmelden',
+        name: 'Newsletter anmelden',
         href: 'https://www.neubauprojekte.ch/newsletter-anmelden',
-        current: false,
-      },
-      {
-        name: 'Inserieren',
-        href: 'https://www.neubauprojekte.ch/inserieren',
         current: false,
       },
     ],
@@ -412,7 +457,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      navigation,
+      navigation: initialNavigation(),
       isOpen: false,
       loginFormVisibility: false,
     }
@@ -426,7 +471,7 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.loginform {
-  width: 288px;
+.login-form {
+  width: 395px;
 }
 </style>

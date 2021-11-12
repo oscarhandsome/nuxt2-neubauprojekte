@@ -11,7 +11,7 @@
         <div class="flex p-5">
             <div class="block text-4xl font-bold mr-5">{{ stats.countExclusive }}</div> 
             <p>
-                <span class="text-green-light">unveröffentlichte</span> und <br>recherchierte Neubauten
+                <span class="text-green">unveröffentlichte</span> und <br>recherchierte Neubauten
             </p>    
         </div>
         <div class="flex p-5">

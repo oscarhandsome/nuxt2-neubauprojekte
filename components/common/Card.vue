@@ -42,7 +42,7 @@
         font-semibold
         text-base text-center text-white
         uppercase
-        bg-green-light
+        bg-green
         hover:opacity-80
         focus:opacity-80
         transition-all

@@ -230,8 +230,9 @@ module.exports = {
         800: '#993637',
       },
       yellow: colors.amber,
-      green: colors.green,
-      'green-light': '#79c20a',
+      // green: colors.green,
+      green: '#79C20A',
+      'green-light': '#C1ED7F',
       blue: {
         100: '#D4D4D9',
         200: '#BEBFC5',
@@ -288,10 +289,10 @@ module.exports = {
     },
     container: {
       center: true,
-      padding: {
-        DEFAULT: '0',
-        lg: '4.375rem',
-      },
+      // padding: {
+      //   DEFAULT: '0',
+      //   lg: '4.375rem',
+      // },
     },
   },
   variants: {
