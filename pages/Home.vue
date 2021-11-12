@@ -48,4 +48,8 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+.test {
+  height: 30px;
+}
+</style>
