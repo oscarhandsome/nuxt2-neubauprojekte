@@ -4,7 +4,7 @@
       <div class="flex items-center justify-between">
         <nav class="w-full">
           <div>
-            <div class="flex items-center justify-between h-16">
+            <div class="flex items-center justify-between h-16 shadow-bottom">
               <nuxt-link class="mr-auto" to="https://www.neubauprojekte.ch">
                 <img
                   :src="require('@/assets/images/logo.svg')"
@@ -70,11 +70,12 @@
                 </div>
                 <div class="hidden md:block">
                   <div class="flex items-baseline relative">
-                    <a
+                    <div
                       v-for="(item, idx) in navigation"
                       :key="idx"
                       :href="item.href"
                       class="
+                        nav-link
                         flex
                         mr-2
                         xl:mr-6
@@ -95,7 +96,8 @@
                       }"
                       :exact="item.current"
                       exact-active-class="active"
-                      >{{ item.name }}
+                    >
+                      {{ item.name }}
 
                       <img
                         v-if="item.childrens"
@@ -110,14 +112,7 @@
 
                       <div
                         v-if="item.childrens"
-                        class="
-                          absolute
-                          top-full
-                          dropdown
-                          bg-white
-                          p-5
-                          border-r-4
-                        "
+                        class="absolute top-full dropdown bg-white px-5"
                       >
                         <div class="flex flex-col items-baseline">
                           <a
@@ -151,7 +146,7 @@
                           </a>
                         </div>
                       </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -167,7 +162,7 @@
                           items-center
                           text-sm
                           ml-auto
-                          mr-0
+                          mr-2
                           rounded-full
                           bg-gray-100
                           px-4
@@ -235,124 +230,39 @@
                         top-full
                         bg-white
                         z-20
+                        px-8
+                        pt-4
+                        pb-10
                       "
                       role="login"
                     >
-                      <div class="login-header p-5">
-                        <i class="fa fa-times close-login-box"></i>
-                        <!-- <a href="https://www.neubauprojekte.ch/registrierung/">Noch kein Konto?</a> -->
-                        <h5 class="font-bold text-2xl">Anmelden</h5>
-                      </div>
-
                       <div
-                        id="loginform"
-                        class="p-5"
-                        name="loginform"
-                        action="https://www.neubauprojekte.ch/logging/"
-                        method="post"
+                        class="
+                          login-header
+                          flex
+                          justify-between
+                          items-center
+                          mb-9
+                        "
                       >
-                        <p class="form-elements">
-                          <label
-                            class="form-element label font-semibold"
-                            for="user"
-                            >Benutzername oder E-Mail-Adresse</label
-                          >
-                          <input
-                            id="user"
-                            type="text"
-                            name="log"
-                            class="
-                              form-element
-                              text
-                              h-10
-                              border border-gray-300
-                              rounded-sm
-                              w-full
-                            "
-                            value=""
-                            size="20"
-                          />
-                        </p>
-                        <p class="form-elements">
-                          <label
-                            class="form-element label font-semibold"
-                            for="pass"
-                            >Passwort</label
-                          >
-                          <input
-                            id="pass"
-                            type="password"
-                            name="pwd"
-                            class="
-                              form-element
-                              text
-                              h-10
-                              border border-gray-300
-                              rounded-sm
-                              w-full
-                            "
-                            value=""
-                            size="20"
-                          />
-                        </p>
-
-                        <p class="form-elements active">
-                          <a
-                            href="https://www.neubauprojekte.ch/mein-konto/lost-password/"
-                            class="forgot-password text-green mb-4"
-                            >Passwort vergessen?</a
-                          >
-                        </p>
-                        <p class="form-elements remember-me active mb-4">
-                          <label class="form-element label"
-                            ><input
-                              id="remember_me"
-                              name="rememberme"
-                              type="checkbox"
-                              value="forever"
-                            />
-                            Angemeldet bleiben</label
-                          >
-                        </p>
-                        <p class="form-elements submit active text-center">
-                          <button
-                            id="wp-submit"
-                            type="submit"
-                            name="wp-submit"
-                            class="
-                              button button-primary
-                              w-full
-                              p-4
-                              font-semibold
-                              text-base text-center text-white
-                              uppercase
-                              bg-green
-                              hover:opacity-80
-                              focus:opacity-80
-                              transition-all
-                              rounded-full
-                            "
-                          >
-                            Anmelden
-                          </button>
-                          <input
-                            type="hidden"
-                            name="redirect_to"
-                            value="https://www.neubauprojekte.ch/"
-                          />
-                        </p>
-                      </div>
-                      <div class="register-now-box p-5 flex flex-col">
-                        <h5>Jetzt registrieren</h5>
+                        <h5 class="font-bold text-2xl">Anmelden</h5>
                         <a
-                          class="text-green"
-                          href="https://www.neubauprojekte.ch/logging/?action=register"
-                          >Für die Immobiliensuche</a
+                          href="https://www.neubauprojekte.ch/mein-konto/lost-password/"
+                          class="forgot-password text-green"
+                          >Passwort vergessen?</a
                         >
-                        <a
-                          class="text-green"
-                          href="https://cockpit.neubauprojekte.ch/"
-                          >Als Immobilien-Anbieter</a
+                      </div>
+
+                      <LoginForm />
+
+                      <hr class="text-gray-100 mb-5" />
+
+                      <div class="register-now-box flex flex-col">
+                        <h5 class="font-semibold text-base mb-2">
+                          Noch nicht registriert?
+                        </h5>
+                        <a class="text-green" href="#"
+                          >Kostenloss Suchprofile erstellen</a
                         >
                       </div>
                     </div>
@@ -390,6 +300,7 @@
 <script lang="ts">
 import Vue from 'vue'
 // import Logo from '@/components/layout/Logo.vue'
+import LoginForm from '@/components/layout/Navbar/LoginForm.vue'
 
 const initialNavigation = () => [
   {
@@ -448,6 +359,7 @@ const initialNavigation = () => [
 
 export default Vue.extend({
   // components: { Logo },
+  components: { LoginForm },
   props: {
     mode: {
       type: String,
@@ -459,7 +371,7 @@ export default Vue.extend({
     return {
       navigation: initialNavigation(),
       isOpen: false,
-      loginFormVisibility: false,
+      loginFormVisibility: true,
     }
   },
   computed: {
@@ -473,5 +385,14 @@ export default Vue.extend({
 <style scoped>
 .login-form {
   width: 395px;
+}
+
+.dropdown {
+  display: none;
+}
+
+.nav-link:hover .dropdown,
+.nav-link:active .dropdown {
+  display: block;
 }
 </style>
