@@ -1,16 +1,17 @@
 <template>
   <div class="flex flex-col">
     <Nuxt />
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
-// @TODO RECHECK LAYOUT
-// import Footer from '~/components/layout/Footer/index.vue'
-export default {
+import Vue from 'vue'
+import Footer from '~/components/layout/Footer/index.vue'
+
+export default Vue.extend({
   components: {
-    // Footer,
+    Footer,
   },
-}
+})
 </script>

@@ -222,6 +222,7 @@ module.exports = {
       'gray-100': '#ECECEC',
       'gray-300': '#D1D5DB',
       'gray-700': '#374151',
+      'black-gray': '#444444',
       // indigo: colors.indigo,
       // red: {
       //   100: '#FFDEDE',
