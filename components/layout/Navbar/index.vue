@@ -1,20 +1,13 @@
 <template>
-  <div class="sticky top-0 z-20 bg-white w-full">
+  <div class="sticky top-0 z-20 bg-white w-full shadow shadow-topbar">
     <div class="container mx-auto">
       <div class="flex items-center justify-between">
         <nav class="w-full">
           <div>
-            <div class="flex items-center justify-between shadow-bottom">
-              <nuxt-link class="mr-auto" to="https://www.neubauprojekte.ch">
-                <img
-                  :src="require('@/assets/images/logo.svg')"
-                  width="285"
-                  height="50"
-                  alt="neubauprojekte"
-                />
-              </nuxt-link>
+            <div class="flex items-center justify-end shadow-bottom">
+              <Logo />
 
-              <div class="mr-auto flex md:hidden order-last">
+              <div class="mr-0 flex lg:hidden order-last">
                 <!-- Mobile menu button -->
                 <button
                   class="
@@ -22,10 +15,11 @@
                     items-center
                     justify-center
                     p-2
+                    ml-2
                     rounded-md
-                    focus:outline-none focus:bg-gray-700 focus:text-white
+                    focus:outline-none focus:bg-gray-100
                   "
-                  @click="isOpen = !isOpen"
+                  @click="toggleSidebar"
                 >
                   <img
                     :class="[isOpen ? 'hidden' : 'block', 'h-6 w-6']"
@@ -60,7 +54,7 @@
                   /> -->
                   </nuxt-link>
                 </div>
-                <div class="hidden md:block">
+                <div class="hidden lg:block">
                   <div class="flex items-baseline relative">
                     <div
                       v-for="(item, idx) in navigation"
@@ -75,7 +69,6 @@
                         border-b-4 border-transparent
                         focus:border-green
                         hover:border-green
-                        py-5
                         transition-all
                       "
                       :class="{
@@ -115,7 +108,7 @@
                               mr-2
                               xl:mr-6
                               font-light
-                              text-base
+                              text-base text-black
                               border-b-4 border-transparent
                               py-5
                               focus:border-green
@@ -151,7 +144,7 @@
                         class="
                           flex
                           items-center
-                          text-sm
+                          text-sm text-black
                           ml-auto
                           mr-2
                           rounded-full
@@ -160,10 +153,6 @@
                           focus:bg-green focus:text-white
                           transition-all
                         "
-                        :class="{
-                          'text-black': !darkMode,
-                          'text-white': darkMode,
-                        }"
                         @click="loginFormVisibility = !loginFormVisibility"
                       >
                         <span class="hidden md:block mr-2">Merkliste</span>
@@ -273,7 +262,7 @@
                 class="
                   block
                   font-medium
-                  text-sm text-primary
+                  text-sm
                   hover:text-primary hover:bg-gray-100
                   focus:outline-none focus:text-white focus:bg-gray-100
                 "
@@ -286,14 +275,21 @@
         </nav>
       </div>
     </div>
+
+    <Sidebar
+      :open="open"
+      :navigation="navigation"
+      @closeSidebar="open = false"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-// import Logo from '@/components/layout/Logo.vue'
+import Logo from '@/components/layout/Logo.vue'
 import LoginForm from '@/components/layout/Navbar/LoginForm.vue'
 import LoginMenu from '@/components/layout/Navbar/LoginMenu.vue'
+import Sidebar from '~/components/layout/Sidebar.vue'
 
 const initialNavigation = () => [
   {
@@ -351,8 +347,7 @@ const initialNavigation = () => [
 ]
 
 export default Vue.extend({
-  // components: { Logo },
-  components: { LoginForm, LoginMenu },
+  components: { Logo, LoginForm, LoginMenu, Sidebar },
   props: {
     mode: {
       type: String,
@@ -363,9 +358,10 @@ export default Vue.extend({
   data() {
     return {
       navigation: initialNavigation(),
-      isOpen: false,
-      loginFormVisibility: false,
-      loggedMenu: false,
+      isOpen: false as boolean,
+      loginFormVisibility: false as boolean,
+      loggedMenu: false as boolean,
+      open: false as boolean,
     }
   },
   computed: {
@@ -376,6 +372,9 @@ export default Vue.extend({
   methods: {
     loginConfirmed() {
       this.loggedMenu = true
+    },
+    toggleSidebar() {
+      this.open = !this.open
     },
   },
 })

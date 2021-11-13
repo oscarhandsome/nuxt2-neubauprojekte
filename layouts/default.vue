@@ -13,5 +13,8 @@ export default Vue.extend({
   components: {
     Footer,
   },
+  data() {
+    return {}
+  },
 })
 </script>

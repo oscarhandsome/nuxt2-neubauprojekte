@@ -31,14 +31,16 @@ module.exports = {
       button: '0 4px 4px 0 rgba(0, 0, 0, 0.25)',
       bottom: 'inset 0 -2px -4px 0 rgba(0, 0, 0, 0.06)',
       input: '0px 1px 2px rgba(0, 0, 0, 0.05)',
+      topbar:
+        '0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06)',
     },
-    // screens: {
-    //   sm: '375px',
-    //   smd: '768px',
-    //   md: '1024px',
-    //   lg: '1152px',
-    //   xl: '1440px',
-    // },
+    screens: {
+      sm: '375px',
+      smd: '768px',
+      md: '1024px',
+      lg: '1152px',
+      xl: '1440px',
+    },
 
     // colors: {
     //   transparent: 'transparent',
