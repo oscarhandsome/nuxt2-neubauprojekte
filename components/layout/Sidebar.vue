@@ -19,30 +19,8 @@
     "
     :class="{ 'transform translate-x-full': !open }"
   >
-    <div class="flex-shrink flex mb-4">
-      <button
-        class="
-          search-button
-          flex
-          align-center
-          justify-between
-          sidebar-search
-          bg-white
-          p-4
-          rounded-full
-          w-full
-          remove-blue-highlight
-        "
-      >
-        <span>
-          <img src="Search.svg" alt="search icon" />
-        </span>
-        <span class="text-md open-sans-300"> Wo suchst Du? </span>
-        <span>
-          <img src="Crosshair.svg" alt="search icon" />
-        </span>
-      </button>
-    </div>
+    <SearchInput />
+
     <nav class="flex flex-1 flex-col pt-5 pb-4 overflow-y-auto">
       <ul class="">
         <!-- <li class="text-md mb-4 cursor-pointer font-light" @click="goTo('/')">
@@ -80,10 +58,11 @@
 import Vue from 'vue'
 import { NavLinkParam } from 'types'
 
+import SearchInput from '~/components/common/SearchInput.vue'
 import BaseButton from '@/components/base/BaseButton.vue'
 
 export default Vue.extend({
-  components: { BaseButton },
+  components: { SearchInput, BaseButton },
   props: {
     open: {
       type: Boolean,

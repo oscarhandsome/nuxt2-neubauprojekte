@@ -11,13 +11,13 @@
         :key="idx"
         class="swiper-slide relative"
       >
-        <Card :item="project" />
+        <SliderNavigation :item="project" />
         <img class="object-cover h-496 w-full" :src="project.image" />
       </div>
     </Slider>
     <SearchBar
       v-if="projects.length !== 0"
-      class="absolute bottom-10 z-20 left-1/2 transform -translate-x-1/2"
+      class="absolute z-20 left-8 top-1/2 transform -translate-y-1/2"
     />
   </div>
 </template>
@@ -26,13 +26,13 @@
 import Vue from 'vue'
 // import { Projects, Project } from 'types'
 
-import Card from '@/components/common/Card.vue'
+import SliderNavigation from '~/components/common/SliderNavigation.vue'
 import Spinner from '@/components/common/Spinner.vue'
 import Slider from '@/components/common/Slider.vue'
 import SearchBar from '@/components/common/SearchBar.vue'
 
 export default Vue.extend({
-  components: { Card, Spinner, Slider, SearchBar },
+  components: { SliderNavigation, Spinner, Slider, SearchBar },
   // @TODO CHECK WHY NOT WORK
   // async asyncData({ $axios }) {
   //   const params = {
