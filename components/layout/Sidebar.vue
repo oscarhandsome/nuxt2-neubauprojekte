@@ -53,7 +53,7 @@
           :key="idx"
           class="text-md mb-4 cursor-pointer font-light"
         >
-          <a :href="item.href">{{ item.name }}</a>
+          <a :href="item.href">{{ item.text }}</a>
         </li>
       </ul>
     </nav>
@@ -78,6 +78,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { NavLinkParam } from 'types'
+
 import BaseButton from '@/components/base/BaseButton.vue'
 
 export default Vue.extend({
@@ -91,7 +93,7 @@ export default Vue.extend({
     navigation: {
       type: Array,
       required: true,
-      default: () => [] as Array<Object>,
+      default: () => [] as Array<NavLinkParam>,
     },
   },
   data() {

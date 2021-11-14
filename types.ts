@@ -5,6 +5,8 @@ export interface NavLinkParam {
   badge?: string
   href?: string
   route?: Location
+  current?: boolean
+  childrens?: Array<NavLinkParam>
 }
 
 interface Project {

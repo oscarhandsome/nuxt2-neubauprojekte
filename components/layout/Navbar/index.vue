@@ -81,7 +81,7 @@
                       :exact="item.current"
                       exact-active-class="active"
                     >
-                      <a :href="item.href">{{ item.name }}</a>
+                      <a :href="item.href">{{ item.text }}</a>
 
                       <img
                         v-if="item.childrens"
@@ -126,7 +126,7 @@
                             }"
                             :exact="itemCh.current"
                             exact-active-class="active"
-                            >{{ itemCh.name }}
+                            >{{ itemCh.text }}
                           </a>
                         </div>
                       </div>
@@ -286,65 +286,78 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { NavLinkParam } from 'types'
+
 import Logo from '@/components/layout/Logo.vue'
 import LoginForm from '@/components/layout/Navbar/LoginForm.vue'
 import LoginMenu from '@/components/layout/Navbar/LoginMenu.vue'
 import Sidebar from '~/components/layout/Sidebar.vue'
 
-const initialNavigation = () => [
+const navigation: Array<NavLinkParam> = [
   {
-    name: 'Kaufen',
+    text: 'Kaufen',
     href: 'https://www.neubauprojekte.ch/objektsuche/',
     current: true,
   },
   {
-    name: 'Mieten',
+    text: 'Mieten',
     href: 'https://www.neubauprojekte.ch/anbieter-liste',
     current: false,
   },
   {
-    name: 'Anbieter',
+    text: 'Anbieter',
     href: 'https://www.neubauprojekte.ch/neubauinfo',
     current: false,
   },
   {
-    name: 'Blog',
+    text: 'Blog',
     href: 'https://www.neubauprojekte.ch/bautrends',
     current: false,
   },
   {
-    name: 'Premium-Abo',
+    text: 'Premium-Abo',
     href: 'https://www.neubauprojekte.ch/immobilienmarketing',
     current: false,
   },
   {
-    name: 'Inserieren',
+    text: 'Inserieren',
     href: 'https://www.neubauprojekte.ch/inserieren',
     current: false,
   },
   {
-    name: 'Mehr..',
+    text: 'Mehr..',
     href: '',
     current: false,
     childrens: [
       {
-        name: 'Testimonials & Referenzen',
+        text: 'Testimonials & Referenzen',
         href: 'https://www.neubauprojekte.ch/information-neubauinfoservice',
         current: false,
       },
       {
-        name: 'First Caution',
+        text: 'First Caution',
         href: 'https://www.neubauprojekte.ch/firstcaution',
         current: false,
       },
       {
-        name: 'Newsletter anmelden',
+        text: 'Newsletter anmelden',
         href: 'https://www.neubauprojekte.ch/newsletter-anmelden',
         current: false,
       },
     ],
   },
 ]
+
+declare module 'vue/types/vue' {
+  interface Vue {
+    isOpen: boolean
+    loginFormVisibility: boolean
+    loggedMenu: boolean
+    open: boolean
+    loginConfirmed: () => void
+    toggleSidebar: () => void
+  }
+}
 
 export default Vue.extend({
   components: { Logo, LoginForm, LoginMenu, Sidebar },
@@ -357,7 +370,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      navigation: initialNavigation(),
+      navigation,
       isOpen: false as boolean,
       loginFormVisibility: false as boolean,
       loggedMenu: false as boolean,
@@ -370,10 +383,10 @@ export default Vue.extend({
     },
   },
   methods: {
-    loginConfirmed() {
+    loginConfirmed(): void {
       this.loggedMenu = true
     },
-    toggleSidebar() {
+    toggleSidebar(): void {
       this.open = !this.open
     },
   },
