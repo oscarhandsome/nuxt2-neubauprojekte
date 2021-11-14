@@ -65,19 +65,13 @@
                         mr-2
                         xl:mr-6
                         font-light
-                        text-base
+                        text-base text-black
+                        focus:text-green
                         border-b-4 border-transparent
                         focus:border-green
                         hover:border-green
                         transition-all
                       "
-                      :class="{
-                        'text-blue-500 bg-transparent focus:outline-none focus:text-green focus:bg-white hover:outline-none hover:text-green hover:bg-white':
-                          !darkMode,
-                        'text-white bg-transparent focus:outline-none focus:text-blue-500 focus:bg-white hover:text-blue-500 hover:bg-white':
-                          darkMode,
-                        'md:hidden': item.hiddenOnDesktop,
-                      }"
                       :exact="item.current"
                       exact-active-class="active"
                     >
@@ -109,6 +103,7 @@
                               xl:mr-6
                               font-light
                               text-base text-black
+                              focus:text-green
                               border-b-4 border-transparent
                               py-5
                               focus:border-green
@@ -117,13 +112,6 @@
                               whitespace-nowrap
                               w-full
                             "
-                            :class="{
-                              'text-blue-500 bg-transparent focus:outline-none focus:text-green focus:bg-white hover:outline-none hover:text-green hover:bg-white':
-                                !darkMode,
-                              'text-white bg-transparent focus:outline-none focus:text-blue-500 focus:bg-white hover:text-blue-500 hover:bg-white':
-                                darkMode,
-                              'md:hidden': item.hiddenOnDesktop,
-                            }"
                             :exact="itemCh.current"
                             exact-active-class="active"
                             >{{ itemCh.text }}
@@ -179,10 +167,6 @@
                           focus:bg-green focus:text-white
                           transition-all
                         "
-                        :class="{
-                          'text-black': !darkMode,
-                          'text-white': darkMode,
-                        }"
                         @click="loginFormVisibility = !loginFormVisibility"
                       >
                         <span class="hidden md:block mr-2">Anmelden</span>
