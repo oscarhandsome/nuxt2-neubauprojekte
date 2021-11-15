@@ -15,8 +15,6 @@
     <!-- <label>Räume</label>
     <vue-slider ref="slider" v-model="room"></vue-slider> -->
 
-    <base-button exclusive>2’199 Treffer gefunden!</base-button>
-
     <button
       type="submit"
       class="
