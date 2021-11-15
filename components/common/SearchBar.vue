@@ -15,6 +15,8 @@
     <!-- <label>Räume</label>
     <vue-slider ref="slider" v-model="room"></vue-slider> -->
 
+    <base-button exclusive>2’199 Treffer gefunden!</base-button>
+
     <button
       type="submit"
       class="
@@ -47,9 +49,10 @@ import Vue from 'vue'
 // import BaseButton from '../base/BaseButton.vue'
 // import BaseSlider from '../base/BaseSlider.vue'
 import SearchInput from '~/components/common/SearchInput.vue'
+import BaseButton from '../base/BaseButton.vue'
 
 export default Vue.extend({
-  components: { SearchInput },
+  components: { SearchInput, BaseButton },
   data() {
     return {
       radius: 0,
