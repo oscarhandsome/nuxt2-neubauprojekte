@@ -2,19 +2,39 @@
   <div class="bg-green-light md:rounded-2xl p-8">
     <h3 class="text-base mb-2">
       Realisiere Deinen Traum vom
-      <span class="bg-hero bg-cover">Eigenheim</span>
+      <span
+        class="
+          inline-block
+          bg-hero bg-8 bg-no-repeat
+          font-bold
+          w-28
+          p-2
+          text-center
+        "
+        >Eigenheim</span
+      >
     </h3>
     <h2 class="text-4xl font-bold mb-2">Das Portal für <br />neues Wohnen</h2>
     <h4 class="text-base mb-8">
       Inklusive Neubauprojekte in Planung, im <br />Aufbau und bezugsfertig.
     </h4>
     <SearchInput />
-    <!-- 
-    <label>Umkreis</label>
-    <vue-slider ref="slider" v-model="radius"></vue-slider> -->
 
-    <!-- <label>Räume</label>
-    <vue-slider ref="slider" v-model="room"></vue-slider> -->
+    <div class="mb-11">
+      <div class="mb-11">
+        <!-- <client-only >
+          <label>Umkreis</label>
+          <vue-slider ref="slider" v-model="room"></vue-slider>
+        </client-only> -->
+      </div>
+    </div>
+
+    <div class="mb-11">
+      <!-- <client-only >
+        <label>Räume</label>
+        <vue-slider ref="slider" v-model="room"></vue-slider>
+      </client-only> -->
+    </div>
 
     <p class="text-xs mb-5">Letzte Suche: Zürich, 8046</p>
 
@@ -57,7 +77,16 @@ export default Vue.extend({
     return {
       radius: 0,
       room: [0, 7.5],
+      umkreisOptions: {
+        min: 0,
+        max: 15,
+        enableCross: false,
+        tooltipMerge: false,
+      },
     }
+  },
+  methods: {
+    umkreisChange(val: any) {},
   },
 })
 </script>

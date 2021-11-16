@@ -3,6 +3,7 @@
     <Navbar></Navbar>
     <Header></Header>
     <Advertisement />
+    <Projects />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import { SeoHead } from 'types'
 import Navbar from '@/components/layout/Navbar/index.vue'
 import Header from '@/components/layout/Header.vue'
 import Advertisement from '@/components/common/Advertisement.vue'
+import Projects from '@/components/common/Projects.vue'
 
 const homePage: SeoHead = {
   title: 'Neubauprojekte.ch  Das Portal für neues Wohnen.',
@@ -30,6 +32,7 @@ export default Vue.extend({
     Navbar,
     Header,
     Advertisement,
+    Projects,
   },
 
   data() {

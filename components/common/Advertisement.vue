@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-gray-200">
+  <section class="bg-banner-card">
     <div class="container mx-auto py-5">
       <div class="">
         <h2 class="text-center text-3xl">

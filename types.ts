@@ -15,10 +15,15 @@ interface Project {
   realtorImage?: string
   realtorTitle?: string
   realtorUrl?: string
+  id: string | number
   title?: string
+  address?: string
   uid?: string | number
   url?: string
   zip?: string | number
+  status?: boolean
+  new?: boolean
+  published?: string
 }
 
 interface Projects {

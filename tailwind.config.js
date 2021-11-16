@@ -119,6 +119,13 @@ module.exports = {
         hero: `url('static/Brush.svg')`,
         //   hero: `url('~assets/images/products/bottles-hero.png')`,
       },
+      backgroundSize: {
+        auto: 'auto',
+        cover: 'cover',
+        contain: 'contain',
+        '50%': '50%',
+        8: '8rem',
+      },
       // margin: {
       //   '-1/5': '-20%',
       // },
@@ -229,6 +236,7 @@ module.exports = {
         700: '#374151',
         900: '#111827',
       },
+      'banner-card': '#F3F4F6',
       'black-gray': '#444444',
       'gray-banner': '#F4F5F7',
       // indigo: colors.indigo,
@@ -304,7 +312,7 @@ module.exports = {
       // overlay: '#2B1E70',
     },
     fontFamily: {
-      sans: ['Open Sans', 'Helvetica', 'Arial', 'sans-serif'],
+      sans: ['Open Sans', 'sans-serif'],
       // roboto: ['Roboto', 'sans-serif'],
     },
     container: {
