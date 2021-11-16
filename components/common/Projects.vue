@@ -18,6 +18,29 @@
         </slider>
       </div>
     </section>
+
+    <section>
+      <BaseTitle title="Aktuelle Neubauprojekte nach Regionen" class="mb-4" />
+
+      <div class="slider">
+        <slider class="-mx-1 px-2">
+          <Card v-for="item in projects3" :key="item.id" :item="item" />
+        </slider>
+      </div>
+    </section>
+
+    <section>
+      <BaseTitle
+        title="Aktuelle Neubauprojekte geplant und in Arbeit"
+        class="mb-4"
+      />
+
+      <div class="slider">
+        <slider class="-mx-1 px-2">
+          <Card v-for="item in projects4" :key="item.id" :item="item" />
+        </slider>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -135,6 +158,84 @@ const projects2: Array<Project> = [
   },
 ]
 
+const projects3: Array<Project> = [
+  {
+    image: 'images/estate3_1.jpg',
+    id: 1,
+    title: 'Zurich See Region',
+    address: '189 Projekte',
+    published: '29  Unveröffentlichte Projekte',
+    status: false,
+    new: false,
+  },
+  {
+    image: 'images/estate3_2.jpg',
+    id: 2,
+    title: 'Winterthur Altstadt',
+    address: '119 Projekte',
+    published: '9 Unveröffentlichte Projekte',
+    status: false,
+    new: false,
+  },
+  {
+    image: 'images/estate3_3.jpg',
+    id: 3,
+    title: 'Limmattal',
+    address: '189 Projekte',
+    published: '29  Unveröffentlichte Projekte',
+    status: false,
+    new: false,
+  },
+  {
+    image: 'images/estate3_4.jpg',
+    id: 4,
+    title: 'Zürich West',
+    address: '189 Projekte',
+    published: '29  Unveröffentlichte Projekte',
+    status: false,
+    new: false,
+  },
+]
+
+const projects4: Array<Project> = [
+  {
+    image: 'images/estate4_1.jpg',
+    id: 1,
+    title: 'Fertigstellung 2021',
+    address: '189 Projekte',
+    published: '29  Unveröffentlichte Projekte',
+    status: false,
+    new: false,
+  },
+  {
+    image: 'images/estate4_2.jpg',
+    id: 2,
+    title: 'Fertigstellung 2022',
+    address: '119 Projekte',
+    published: '9 Unveröffentlichte Projekte',
+    status: false,
+    new: false,
+  },
+  {
+    image: 'images/estate4_3.jpg',
+    id: 3,
+    title: 'Wohnung',
+    address: '189 Projekte',
+    published: '29  Unveröffentlichte Projekte',
+    status: false,
+    new: false,
+  },
+  {
+    image: 'images/estate4_4.jpg',
+    id: 4,
+    title: 'Villas',
+    address: '189 Projekte',
+    published: '29  Unveröffentlichte Projekte',
+    status: false,
+    new: false,
+  },
+]
+
 export default Vue.extend({
   components: {
     BaseTitle,
@@ -145,6 +246,8 @@ export default Vue.extend({
     return {
       projects,
       projects2,
+      projects3,
+      projects4,
     }
   },
 })
