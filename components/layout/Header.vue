@@ -5,6 +5,19 @@
         <Spinner />
       </div>
     </div>
+
+    <SearchBar
+      v-if="projects.length !== 0"
+      class="
+        smd:absolute
+        smd:z-20
+        smd:left-8
+        smd:top-1/2
+        smd:transform
+        smd:-translate-y-1/2
+      "
+    />
+
     <Slider v-if="projects" class="relative z-10">
       <div
         v-for="(project, idx) in projects"
@@ -15,10 +28,6 @@
         <img class="object-cover h-496 w-full" :src="project.image" />
       </div>
     </Slider>
-    <SearchBar
-      v-if="projects.length !== 0"
-      class="absolute z-20 left-8 top-1/2 transform -translate-y-1/2"
-    />
   </div>
 </template>
 

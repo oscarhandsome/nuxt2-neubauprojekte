@@ -4,7 +4,7 @@
       <div class="flex items-center justify-between">
         <nav class="w-full">
           <div>
-            <div class="flex items-center justify-end shadow-bottom">
+            <div class="flex items-center justify-end">
               <Logo />
 
               <div class="mr-0 flex lg:hidden order-last">
@@ -43,17 +43,17 @@
               </div>
 
               <div class="flex items-center justify-center">
-                <div class="flex-shrink-0">
-                  <nuxt-link to="/">
-                    <!-- <Logo
+                <!--<div class="flex-shrink-0">
+                   <nuxt-link to="/">
+                     <Logo
                     class="mx-auto md:mr-24"
                     :class="{
                       'text-blue-500': !darkMode,
                       'text-white': darkMode,
                     }"
-                  /> -->
-                  </nuxt-link>
-                </div>
+                  /> 
+                  </nuxt-link> 
+                </div>-->
                 <div class="hidden lg:block">
                   <div class="flex items-baseline relative">
                     <div
@@ -187,12 +187,13 @@
                         flex flex-col
                         absolute
                         right-0
-                        top-full
+                        top-16
                         bg-white
                         z-20
                         px-8
                         pt-4
                         pb-10
+                        shadow-full
                       "
                       :class="{ 'login-form': !loggedMenu }"
                       role="login"

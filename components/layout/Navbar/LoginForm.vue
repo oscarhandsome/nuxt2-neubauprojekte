@@ -69,30 +69,15 @@
         Angemeldet bleiben</label
       >
     </div>
-    <div class="form-elements submit active text-center mb-9">
-      <button
-        type="submit"
-        class="
-          button button-primary
-          font-bold
-          text-base text-center text-gray-700
-          bg-green-light
-          hover:opacity-80
-          focus:opacity-80
-          transition-all
-          rounded-full
-          w-full
-          py-4
-        "
-      >
-        Anmelden
-      </button>
+    <div class="form-elements submit active mb-9">
+      <base-button primaryLight>Anmelden</base-button>
     </div>
   </form>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import BaseButton from '@/components/base/BaseButton.vue'
 
 const initForm = () => ({
   email: '',
@@ -100,6 +85,7 @@ const initForm = () => ({
 })
 
 export default Vue.extend({
+  components: { BaseButton },
   data() {
     return {
       form: initForm(),

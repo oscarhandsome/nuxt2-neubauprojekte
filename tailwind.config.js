@@ -29,10 +29,12 @@ module.exports = {
   theme: {
     boxShadow: {
       button: '0 4px 4px 0 rgba(0, 0, 0, 0.25)',
-      bottom: 'inset 0 -2px -4px 0 rgba(0, 0, 0, 0.06)',
+      // bottom: 'inset 0 -2px -4px 0 rgba(0, 0, 0, 0.06)',
       input: '0px 1px 2px rgba(0, 0, 0, 0.05)',
       topbar:
         '0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06)',
+      bottom: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+      full: '0px 4px 44px rgba(0, 0, 0, 0.15)',
     },
     screens: {
       sm: '375px',
@@ -113,12 +115,10 @@ module.exports = {
     // }
 
     extend: {
-      // backgroundImage: {
-      //   hero: `url('~assets/images/products/bottles-hero.png')`,
-      //   heroMobile: `url('~assets/images/products/3-bottles.png')`,
-      //   viagraCroppedMini: `url('~assets/images/products/bottle-viagra-cropped-mini.png')`,
-      //   viagraCropped: `url('~assets/images/products/bottle-viagra-cropped.png')`,
-      // },
+      backgroundImage: {
+        hero: `url('static/Brush.svg')`,
+        //   hero: `url('~assets/images/products/bottles-hero.png')`,
+      },
       // margin: {
       //   '-1/5': '-20%',
       // },

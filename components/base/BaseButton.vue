@@ -15,11 +15,18 @@
       focus:outline-none
       leading-none
       remove-blue-highlight
+      transition-all
     "
-    :class="[{ light }, { plain }, { exclusive }]"
+    :class="[
+      { primaryLight },
+      { primary },
+      { light },
+      { plain },
+      { exclusive },
+    ]"
     @click.stop="onClick"
   >
-    <slot />
+    <slot></slot>
   </button>
 </template>
 
@@ -27,6 +34,14 @@
 import Vue from 'vue'
 export default Vue.extend({
   props: {
+    primary: {
+      type: Boolean,
+      default: false,
+    },
+    primaryLight: {
+      type: Boolean,
+      default: false,
+    },
     light: {
       type: Boolean,
       default: false,
@@ -41,7 +56,7 @@ export default Vue.extend({
     },
   },
   methods: {
-    onClick() {
+    onClick(): void {
       this.$emit('onClick')
     },
   },
@@ -81,6 +96,22 @@ export default class DefaultLayout extends Vue {
   background: #e6ab0b;
   border-radius: 9999px;
   color: #ffffff;
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04))
+    drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
+}
+
+.base-button.primary {
+  background: #79c20a;
+  border-radius: 9999px;
+  color: #ffffff;
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04))
+    drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
+}
+.base-button.primaryLight {
+  background: #ddfbb2;
+  border-radius: 9999px;
+  color: #374151;
+  font-weight: 700;
   --tw-drop-shadow: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04))
     drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
 }

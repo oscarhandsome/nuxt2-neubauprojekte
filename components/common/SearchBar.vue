@@ -1,7 +1,8 @@
 <template>
-  <div class="bg-green-light rounded-2xl p-8">
-    <h3 class="text-lg font-semibold mb-2">
-      Realisiere Deinen Traum vom Eigenheim
+  <div class="bg-green-light md:rounded-2xl p-8">
+    <h3 class="text-base mb-2">
+      Realisiere Deinen Traum vom
+      <span class="bg-hero bg-cover">Eigenheim</span>
     </h3>
     <h2 class="text-4xl font-bold mb-2">Das Portal für <br />neues Wohnen</h2>
     <h4 class="text-base mb-8">
@@ -15,8 +16,9 @@
     <!-- <label>Räume</label>
     <vue-slider ref="slider" v-model="room"></vue-slider> -->
 
+    <p class="text-xs mb-5">Letzte Suche: Zürich, 8046</p>
+
     <button
-      type="submit"
       class="
         button button-primary
         font-bold
@@ -29,6 +31,7 @@
         w-full
         py-4
         mb-8
+        shadow-buttom
       "
     >
       2’199 Treffer gefunden!
@@ -47,10 +50,9 @@ import Vue from 'vue'
 // import BaseButton from '../base/BaseButton.vue'
 // import BaseSlider from '../base/BaseSlider.vue'
 import SearchInput from '~/components/common/SearchInput.vue'
-import BaseButton from '../base/BaseButton.vue'
 
 export default Vue.extend({
-  components: { SearchInput, BaseButton },
+  components: { SearchInput },
   data() {
     return {
       radius: 0,
