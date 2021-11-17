@@ -3,30 +3,29 @@
     <section class="mb-20">
       <BaseTitle title="Neue Projekte hinzugefügt" class="mb-4" />
 
-      <div class="slider">
-        <slider class="-mx-1 px-2">
-          <Card v-for="item in projects" :key="item.id" :item="item" />
-        </slider>
-      </div>
+      <slider :slides-per-view="5" :space-between="20">
+        <Card
+          v-for="item in projects"
+          :key="item.id"
+          :item="item"
+          class="swiper-slide"
+        />
+      </slider>
     </section>
+
     <section>
       <BaseTitle title="Aktuelle Neubauprojekte nach Themen" class="mb-4" />
-
-      <div class="slider">
-        <slider class="-mx-1 px-2">
-          <Card v-for="item in projects2" :key="item.id" :item="item" />
-        </slider>
-      </div>
+      <slider :slides-per-view="5" :space-between="20">
+        <Card v-for="item in projects2" :key="item.id" :item="item" />
+      </slider>
     </section>
 
     <section>
       <BaseTitle title="Aktuelle Neubauprojekte nach Regionen" class="mb-4" />
 
-      <div class="slider">
-        <slider class="-mx-1 px-2">
-          <Card v-for="item in projects3" :key="item.id" :item="item" />
-        </slider>
-      </div>
+      <slider :slides-per-view="5" :space-between="20">
+        <Card v-for="item in projects3" :key="item.id" :item="item" />
+      </slider>
     </section>
 
     <section>
@@ -34,12 +33,9 @@
         title="Aktuelle Neubauprojekte geplant und in Arbeit"
         class="mb-4"
       />
-
-      <div class="slider">
-        <slider class="-mx-1 px-2">
-          <Card v-for="item in projects4" :key="item.id" :item="item" />
-        </slider>
-      </div>
+      <slider :slides-per-view="5" :space-between="20">
+        <Card v-for="item in projects4" :key="item.id" :item="item" />
+      </slider>
     </section>
   </div>
 </template>

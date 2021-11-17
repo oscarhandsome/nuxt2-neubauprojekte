@@ -23,7 +23,18 @@ export default Vue.extend({
     swiper: directive,
   },
   components: {},
-
+  props: {
+    slidesPerView: {
+      type: Number,
+      required: false,
+      default: 1,
+    },
+    spaceBetween: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
+  },
   data() {
     return {
       // banners: [
@@ -32,7 +43,7 @@ export default Vue.extend({
       //   'https://www.neubauprojekte.ch/wp-content/uploads/2021/06/5066939_01-2000x1000.jpg',
       // ],
       swiperOption: {
-        slidesPerView: 1,
+        slidesPerView: this.slidesPerView,
         spaceBetween: 0,
         slidesPerGroup: 1,
         loop: false,
@@ -43,8 +54,8 @@ export default Vue.extend({
         },
         breakpoints: {
           1024: {
-            slidesPerView: 1,
-            spaceBetween: 0,
+            slidesPerView: this.slidesPerView,
+            spaceBetween: this.spaceBetween,
             pagination: false,
           },
           768: {

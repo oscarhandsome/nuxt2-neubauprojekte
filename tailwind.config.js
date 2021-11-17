@@ -1,7 +1,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  // mode: 'jit',
+  mode: 'jit',
   // purge: ['./**/*.{js,jsx,ts,tsx,vue}'],
   purge: {
     content: [
@@ -307,6 +307,7 @@ module.exports = {
         DEFAULT: '#FCD400',
         dark: '#E6AB0B',
       },
+      orange: '#E6AB0B',
       'orange-overlay': '#EFD358',
       // monochromatic: {
       //   grey: '#F7FAFD',

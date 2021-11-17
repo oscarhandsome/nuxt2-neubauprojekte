@@ -1,5 +1,5 @@
 <template>
-  <div class="card relative w-64 mr-4 rounded-2xl">
+  <div class="card relative w-64 rounded-2xl">
     <label
       v-if="item.new"
       class="
@@ -39,7 +39,7 @@
       <img src="Position.svg" alt="pin" class="mr-2" />
       {{ item.address }}
     </p>
-    <p class="text-yellow">{{ item.published }}</p>
+    <p class="text-orange">{{ item.published }}</p>
   </div>
 </template>
 
