@@ -23,8 +23,7 @@
         class="
           text-md
           open-sans-300
-          mr-auto
-          ml-9
+          w-2/3
           focus:border-transparent focus:outline-none
           hover:border-transparent hover:outline-none
         "

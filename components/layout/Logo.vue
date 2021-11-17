@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link class="mr-auto my-3 md:my-6" to="/">
+  <nuxt-link class="mr-auto" to="/">
     <img
       :src="require('@/assets/images/logo.svg')"
       width="285"

@@ -8,11 +8,13 @@
           text-sm
           ml-auto
           mr-0
-          rounded-full
           sm:px-4 sm:py-2
           text-black
-          hover:bg-green hover:text-white
-          focus:bg-green focus:text-white
+          hover:text-green
+          focus:text-green
+          border-b-4 border-transparent
+          focus:border-green
+          hover:border-green
           transition-all
         "
         :href="item.link"

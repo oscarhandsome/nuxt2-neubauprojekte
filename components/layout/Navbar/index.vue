@@ -66,7 +66,9 @@
                         xl:mr-6
                         font-light
                         text-base text-black
+                        hover:text-green
                         focus:text-green
+                        py-4
                         border-b-4 border-transparent
                         focus:border-green
                         hover:border-green
@@ -103,6 +105,7 @@
                               xl:mr-6
                               font-light
                               text-base text-black
+                              hover:text-green
                               focus:text-green
                               border-b-4 border-transparent
                               py-5
@@ -141,7 +144,6 @@
                           focus:bg-green focus:text-white
                           transition-all
                         "
-                        @click="loginFormVisibility = !loginFormVisibility"
                       >
                         <span class="hidden md:block mr-2">Merkliste</span>
 
@@ -184,10 +186,14 @@
                       v-if="loginFormVisibility"
                       id="login"
                       class="
-                        flex flex-col
-                        absolute
+                        fixed
+                        sm:absolute
                         right-0
-                        top-16
+                        top-10
+                        sm:top-full
+                        left-0
+                        sm:left-auto
+                        flex flex-col
                         bg-white
                         z-20
                         px-8
@@ -381,6 +387,12 @@ export default Vue.extend({
 <style scoped>
 .login-form {
   width: 395px;
+}
+
+@media screen and (max-width: 375px) {
+  .login-form {
+    width: 100%;
+  }
 }
 
 .dropdown {
