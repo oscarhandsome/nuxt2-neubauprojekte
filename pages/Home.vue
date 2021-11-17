@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navbar></Navbar>
     <Header></Header>
     <Advertisement />
     <Projects />
@@ -10,7 +9,6 @@
 <script lang="ts">
 import Vue from 'vue'
 import { SeoHead } from 'types'
-import Navbar from '@/components/layout/Navbar/index.vue'
 import Header from '@/components/layout/Header.vue'
 import Advertisement from '@/components/common/Advertisement.vue'
 import Projects from '@/components/common/Projects.vue'
@@ -29,7 +27,6 @@ const homePage: SeoHead = {
 
 export default Vue.extend({
   components: {
-    Navbar,
     Header,
     Advertisement,
     Projects,

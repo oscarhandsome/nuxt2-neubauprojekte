@@ -22,24 +22,22 @@
 
     <div class="mb-11">
       <div class="mb-11">
-        <!-- <client-only >
-          <label>Umkreis</label>
-          <vue-slider ref="slider" v-model="room"></vue-slider>
-        </client-only> -->
+        <label>Umkreis</label>
+        <vue-slider ref="slider" v-model="radius"></vue-slider>
       </div>
     </div>
 
     <div class="mb-11">
-      <!-- <client-only >
-        <label>Räume</label>
-        <vue-slider ref="slider" v-model="room"></vue-slider>
-      </client-only> -->
+      <label>Räume</label>
+      <vue-slider ref="slider" v-model="room"></vue-slider>
     </div>
 
     <p class="text-xs mb-5">Letzte Suche: Zürich, 8046</p>
 
-    <button
+    <nuxt-link
+      to="/search"
       class="
+        inline-block
         button button-primary
         font-bold
         text-base text-center text-white
@@ -55,7 +53,7 @@
       "
     >
       2’199 Treffer gefunden!
-    </button>
+    </nuxt-link>
 
     <p class="text-gray-900">
       Suchst Du etwas zur Miete? Besuche

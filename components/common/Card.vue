@@ -26,7 +26,7 @@
             flex
             items-center
             justify-center
-            bg-secondary
+            bg-yellow-dark
           "
         >
           <img src="Lock.svg" alt="desc" class="w-12 h-12" />
@@ -39,7 +39,7 @@
       <img src="Position.svg" alt="pin" class="mr-2" />
       {{ item.address }}
     </p>
-    <p class="text-secondary">{{ item.published }}</p>
+    <p class="text-yellow">{{ item.published }}</p>
   </div>
 </template>
 
@@ -48,6 +48,7 @@ import Vue from 'vue'
 import { Project } from '~/types'
 
 export default Vue.extend({
+  components: {},
   props: {
     item: {
       type: Object as () => Project,

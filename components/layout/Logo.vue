@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link class="mr-auto my-3 md:my-6" to="https://www.neubauprojekte.ch">
+  <nuxt-link class="mr-auto my-3 md:my-6" to="/">
     <img
       :src="require('@/assets/images/logo.svg')"
       width="285"
