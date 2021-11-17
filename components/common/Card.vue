@@ -1,5 +1,5 @@
 <template>
-  <div class="card relative w-64 rounded-2xl">
+  <div class="card relative z-10 w-64 mr-4 rounded-2xl">
     <label
       v-if="item.new"
       class="

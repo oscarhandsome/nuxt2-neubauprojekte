@@ -3,7 +3,7 @@
     <section class="mb-20">
       <BaseTitle title="Neue Projekte hinzugefügt" class="mb-4" />
 
-      <slider :slides-per-view="5" :space-between="20">
+      <slider :slides-per-view="5" :space-between="0">
         <Card
           v-for="item in projects"
           :key="item.id"
@@ -13,27 +13,27 @@
       </slider>
     </section>
 
-    <section>
+    <section class="mb-20">
       <BaseTitle title="Aktuelle Neubauprojekte nach Themen" class="mb-4" />
-      <slider :slides-per-view="5" :space-between="20">
+      <slider :slides-per-view="5" :space-between="0">
         <Card v-for="item in projects2" :key="item.id" :item="item" />
       </slider>
     </section>
 
-    <section>
+    <section class="mb-20">
       <BaseTitle title="Aktuelle Neubauprojekte nach Regionen" class="mb-4" />
 
-      <slider :slides-per-view="5" :space-between="20">
+      <slider :slides-per-view="5" :space-between="0">
         <Card v-for="item in projects3" :key="item.id" :item="item" />
       </slider>
     </section>
 
-    <section>
+    <section class="mb-20">
       <BaseTitle
         title="Aktuelle Neubauprojekte geplant und in Arbeit"
         class="mb-4"
       />
-      <slider :slides-per-view="5" :space-between="20">
+      <slider :slides-per-view="5" :space-between="0">
         <Card v-for="item in projects4" :key="item.id" :item="item" />
       </slider>
     </section>
